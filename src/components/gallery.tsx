@@ -24,10 +24,22 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name }) => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
 >
-    <Box sx={{ width: 400, height: 450, display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ width: 400, height: 450, display: 'flex', flexDirection: 'column', }}>
         {hover ? (
-            <Box sx={{ width: 400, height: 350}}>
-                <Typography variant="h6" sx={{ textAlign: 'justify', padding: 3 }}>
+            <Box sx={{ 
+                width: 400, // Ensure the width is 400
+                height: 350, // Ensure the height is 350
+                backgroundImage: `url(${image_url})`,
+                backgroundSize: '400px 350px',
+                // backgroundSize: 'fill', // Change to contain to prevent cropping
+                // backgroundPosition: 'center', // Center the image
+                opacity: 0.1, // Dim effect
+                // position: 'absolute', // Position it absolutely
+                // top: 0, // Align to the top
+                // left: 0, // Align to the left
+                zIndex: 1, // Ensure it's below the text
+            }}>
+                <Typography variant="h6" sx={{ textAlign: 'justify', padding: 3}}>
                 {truncateString(descryption)}
                 </Typography>
           </Box>

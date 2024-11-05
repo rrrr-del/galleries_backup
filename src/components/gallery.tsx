@@ -25,7 +25,7 @@ const Gallary: React.FC<Props> = ({ image_url, descryption }) => {
     >
       {hover ? (
         <Box sx={{ width: 400, height: 400, display: 'flex', flexDirection: 'column' }}>
-          <Box sx={{ width: 400, height: 350, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <Box sx={{ width: 400, height: 350, display: 'flex' }}>
             <Typography variant="h6" sx={{ textAlign: 'justify', padding: 3 }}>
               {truncateString(descryption)}
             </Typography>
@@ -52,7 +52,7 @@ const Gallary: React.FC<Props> = ({ image_url, descryption }) => {
             sx={{
               width: '100%',
               height: '100%',
-              objectFit: 'contain', // Use 'contain' to avoid cropping
+              objectFit: 'fill', 
             }}
           />
         </Box>

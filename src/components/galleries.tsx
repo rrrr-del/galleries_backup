@@ -1,42 +1,79 @@
+import React from 'react';
+import { Grid, Typography } from '@mui/material';
+import Gallary from './gallery';
 
-import Gallary from "./gallery";
+const Galleries: React.FC = () => {
+  const text : string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dol.'
+  const galleryData = [
+    {
+      image_url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
+      descryption : text + text + text + text,
+    //   descryption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dol.',
+    },
+    {
+      image_url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
+      descryption : text + text,
+    //   descryption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+      image_url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
+      descryption : text ,
+      // descryption: 'This is the third gallery item.',
+    },
+    {
+      image_url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
+      descryption : text ,
+      // descryption: 'This is the fourth gallery item.',
+    },
+    {
+      image_url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
+      descryption : text ,
+      // descryption: 'This is the fourth gallery item.',
+    },
+    {
+      image_url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
+      descryption: 'This is the fourth gallery item.',
+    },
+    {
+      image_url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
+      descryption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+      image_url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
+      descryption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+      image_url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
+      descryption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+      image_url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
+      descryption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+      image_url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
+      descryption : 'hello'
+      // descryption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    // Add more items as needed
+  ];
 
 
-const Galleries: React.FC = () => {  
-    const galleryData = [  
-      {  
-        image_url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',  
-        descryption: 'This is the first gallery item.',  
-      },  
-      {  
-        image_url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',  
-        descryption: 'This is the second gallery itemmm.',   
-      },  
-      {  
-        image_url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',  
-        descryption: 'This is the third gallery item.',   
-      },  
-      {  
-        image_url: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',  
-        descryption: 'This is the fourth gallery item.',   
-      },  
-    ];  
-  
-    return (  
-      <div className="galleries">  
-        <h2>Gallery Collection</h2>  
-        <div className="row">  
-          {galleryData.map((item, index) => (  
-            <div className="col-md-3" key={index}>  
-              <Gallary  
-                image_url={item.image_url}  
-                descryption={item.descryption}    
-              />  
-            </div>  
-          ))}  
-        </div>  
-      </div>  
-    );  
-  };  
-  
-  export default Galleries;  
+    
+  return (
+    <div className="galleries" style={{ height: '100vh', overflowY: 'scroll' , padding : '30px'}}>
+      <Grid container spacing={4} >
+        {galleryData.map((item, index) => (
+          <Grid item xs={4} key={index}>
+            <Gallary
+              image_url={item.image_url}
+              descryption={item.descryption}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </div>
+  );
+};
+
+export default Galleries;

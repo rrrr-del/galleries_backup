@@ -66,6 +66,7 @@ const Galleries: React.FC = () => {
         {galleryData.map((item, index) => (
           <Grid item xs={4} key={index}>
             <Gallary
+              name = "fff" 
               image_url={item.image_url}
               descryption={item.descryption}
             />

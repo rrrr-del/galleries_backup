@@ -26,7 +26,7 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name }) => {
 >
     <Box sx={{ width: 400, height: 450, display: 'flex', flexDirection: 'column' }}>
         {hover ? (
-            <Box sx={{ width: 400, height: 350, overflow: 'hidden' }}>
+            <Box sx={{ width: 400, height: 350}}>
                 <Typography variant="h6" sx={{ textAlign: 'justify', padding: 3 }}>
                 {truncateString(descryption)}
                 </Typography>
@@ -56,7 +56,7 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name }) => {
                 borderTop: '1px solid #424242',
                 }}
             >
-                <Typography variant="h5" sx ={{overflow: 'hidden'}}>            
+                <Typography variant="h5">            
                     {name}
                 </Typography>
             </Box>

@@ -67,13 +67,13 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name }) => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: 'row',
-                borderTop: '1px solid #424242',
+                // borderTop: '1px solid #424242',
                 padding: '0 0', // Optional padding for spacing
             }}
-            >
+        >
             <Box
                 sx ={{
-                    width: 200,
+                    width: 300,
                     height: 100,
                     display: 'flex',
                     justifyContent: 'center',
@@ -86,7 +86,7 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name }) => {
             </Box>
             <Box
                 sx ={{
-                    width: 200,
+                    width: 100,
                     height: 100,
                     display: 'flex',
                     justifyContent: 'center',

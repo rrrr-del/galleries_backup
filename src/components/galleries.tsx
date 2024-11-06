@@ -65,8 +65,8 @@ const Galleries: React.FC = () => {
       <Grid container spacing={4} >
         {galleryData.map((item, index) => (
           <Grid item xs={4} key={index}>
-            <Gallary
-              name = "fff" 
+            <Gallary 
+              name={`Gallery ${index}`}
               image_url={item.image_url}
               descryption={item.descryption}
             />

@@ -20,10 +20,10 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name }) => {
 
   return (
 <Card
-      sx={{ width: 400, height: 450, backgroundColor: '#e0e0e0' }}
+      sx={{ width: 400, height: 450, backgroundColor: '#e0e0e0', borderRadius: '23px', }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
->
+>   
     <Box sx={{ width: 400, height: 450, display: 'flex', flexDirection: 'column', }}>
         {hover ? (
             <Box sx={{ 
@@ -33,13 +33,14 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name }) => {
                 backgroundSize: '400px 350px',
                 // backgroundSize: 'fill', // Change to contain to prevent cropping
                 // backgroundPosition: 'center', // Center the image
-                opacity: 0.1, // Dim effect
+                opacity: 1, // Dim effect
                 // position: 'absolute', // Position it absolutely
                 // top: 0, // Align to the top
                 // left: 0, // Align to the left
-                zIndex: 1, // Ensure it's below the text
+                // ransition: 'opacity 0.3s ease',
+                // zIndex: 2, // Ensure it's below the text
             }}>
-                <Typography variant="h6" sx={{ textAlign: 'justify', padding: 3}}>
+                <Typography variant="h6" sx={{ textAlign: 'justify', padding: 3 ,}}>
                 {truncateString(descryption)}
                 </Typography>
           </Box>
@@ -58,32 +59,45 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name }) => {
           />
         )}
 
-            <Box 
-                sx={{
+        <Box
+            sx={{
                 width: 400,
-                height: 50,
+                height: 100,
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                flexDirection: 'row',
                 borderTop: '1px solid #424242',
-                }}
+                padding: '0 0', // Optional padding for spacing
+            }}
             >
-                <Typography variant="h5">            
-                    {name}
-                </Typography>
-            </Box>
             <Box
-                sx={{
-                    width: 400,
-                    height: 50,
+                sx ={{
+                    width: 200,
+                    height: 100,
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    borderTop: '1px solid #424242',
-                }}
+                    color : "brown",  
+                    borderRight: '1px solid #cccccc',
+                }} 
             >
-                <FaRocketchat style={{ fontSize: '24px' }} />
+                <Typography variant="h6">{name}</Typography>
             </Box>
+            <Box
+                sx ={{
+                    width: 200,
+                    height: 100,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',  
+
+                }} 
+            >
+                <FaRocketchat style={{ fontSize: '34px' , color : "brown"}} />
+            </Box>
+        </Box>
+
         
     </Box>
 </Card>

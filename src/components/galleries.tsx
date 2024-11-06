@@ -62,11 +62,11 @@ const Galleries: React.FC = () => {
     
   return (
     <div className="galleries" style={{ height: '100vh', overflowY: 'scroll' , padding : '30px'}}>
-      <Grid container spacing={4} >
+      <Grid container spacing={3} >
         {galleryData.map((item, index) => (
           <Grid item xs={4} key={index}>
             <Gallary 
-              name={`Gallery ${index}`}
+              name={`Galleryalleryalleryalleryalleryalleryalleryalleryalleryalleryalleryalleryalleryalleryalleryallery ${index}`}
               image_url={item.image_url}
               descryption={item.descryption}
             />

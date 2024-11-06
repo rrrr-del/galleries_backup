@@ -11,9 +11,9 @@ interface Props {
 const Gallary: React.FC<Props> = ({ image_url, descryption, name }) => {
   const [hover, setHover] = useState(false);
 
-  const truncateString = (input: string): string => {
-    if (input.length > 270) {
-      return input.substring(0, 270) + '...';
+  const truncateString = (input: string , num : number): string => {
+    if (input.length > num) {
+      return input.substring(0, num) + '...';
     }
     return input;
   };
@@ -27,23 +27,51 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name }) => {
     <Box sx={{ width: 400, height: 450, display: 'flex', flexDirection: 'column', }}>
         {hover ? (
             <Box sx={{ 
+                position: 'relative', // Set position to relative for the parent
                 width: 400, // Ensure the width is 400
                 height: 350, // Ensure the height is 350
-                backgroundImage: `url(${image_url})`,
-                backgroundSize: '400px 350px',
-                // backgroundSize: 'fill', // Change to contain to prevent cropping
-                // backgroundPosition: 'center', // Center the image
-                opacity: 1, // Dim effect
-                // position: 'absolute', // Position it absolutely
-                // top: 0, // Align to the top
-                // left: 0, // Align to the left
-                // ransition: 'opacity 0.3s ease',
-                // zIndex: 2, // Ensure it's below the text
             }}>
-                <Typography variant="h6" sx={{ textAlign: 'justify', padding: 3 ,}}>
-                {truncateString(descryption)}
+
+                <CardMedia
+                    component="img"
+                    image={image_url}
+                    alt="Gallery Image"
+                    sx={{
+                        overflow: 'hidden',
+                        width: 400 ,
+                        height: 350,
+                        objectFit: 'fill',
+                        zIndex: 1,
+                        position: 'absolute',
+                        opacity: 0.4,
+                    }}
+                />
+                
+                {/* <Box sx={{ 
+                    position: 'absolute', // Position it absolutely
+                    // top: 0, // Align to the top
+                    // left: 0, // Align to the left
+                    width: 400, // Full width
+                    height: 350, // Full height
+                    backgroundImage: `url(${image_url})`,
+                    objectFit: 'fill',
+                    backgroundSize: 'fill', // Cover the entire area
+                    opacity: 0.1, // Dim effect
+                    transition: 'opacity 0.3s ease', // Smooth transition
+                    zIndex: 1, // Ensure it's below the text
+                }} /> */}
+                
+                <Typography variant="h6" sx={{
+                    position: 'absolute', 
+                    // position: 'relative', // Position relative to the parent
+                    textAlign: 'justify', 
+                    padding: 3,
+                    opacity : 30 ,
+                    zIndex: 2, // Ensure text is above the background
+                }}>
+                    {truncateString(descryption, 270)}
                 </Typography>
-          </Box>
+            </Box>
         ) : (
           <CardMedia
             
@@ -79,10 +107,12 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name }) => {
                     justifyContent: 'center',
                     alignItems: 'center',
                     color : "brown",  
-                    borderRight: '1px solid #cccccc',
+                    // borderRight: '1px solid #cccccc',
                 }} 
             >
-                <Typography variant="h6">{name}</Typography>
+                <Typography variant="h6">
+                    {truncateString(name , 28)}
+                </Typography>
             </Box>
             <Box
                 sx ={{

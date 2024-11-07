@@ -37,8 +37,8 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints , 
         {hover ? (
             <Box sx={{ 
                 position: 'relative', // Set position to relative for the parent
-                width: 500, // Ensure the width is 400
-                height: 350, 
+                width: width, // Ensure the width is 400
+                height: .7 * height, 
             }}>
 
                 <CardMedia

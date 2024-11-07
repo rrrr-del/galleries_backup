@@ -21,11 +21,11 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints}) 
 
   return (
 <Card
-      sx={{ width: 400, height: 450, backgroundColor: '#e0e0e0', borderRadius: '23px', }}
+      sx={{ width: 400, height: 550, backgroundColor: '#e0e0e0', borderRadius: '23px', }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
 >   
-    <Box sx={{ width: 400, height: 450, display: 'flex', flexDirection: 'column', }}>
+    <Box sx={{ width: 400, height: 550 , display: 'flex', flexDirection: 'column', }}>
         {hover ? (
             <Box sx={{ 
                 position: 'relative', // Set position to relative for the parent
@@ -87,6 +87,26 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints}) 
             }}
           />
         )}
+
+
+        <Box
+            sx={{
+                width: 400,
+                height: 100,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                // flexDirection: 'row',
+                // borderTop: '1px solid #424242',
+                padding: '0 0', // Optional padding for spacing
+            }}
+        >
+            {truncateString(name , 28)}
+
+        </Box>
+
+
+
 
         <Box
             sx={{

@@ -69,6 +69,7 @@ const Galleries: React.FC = () => {
               name={`Galleryalleryalleryalleryalleryalleryalleryalleryalleryalleryalleryalleryalleryalleryalleryallery ${index}`}
               image_url={item.image_url}
               descryption={item.descryption}
+              num_paints = {134}
             />
           </Grid>
         ))}

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { Card, CardMedia, Typography, Box } from '@mui/material';
+import { Card, CardMedia, Typography, Box , Tooltip} from '@mui/material';
 import { FaRocketchat } from 'react-icons/fa6';
 
 interface Props {
   image_url: string;
   descryption: string;
   name: string;
+  num_paints : number ,
 }
 
-const Gallary: React.FC<Props> = ({ image_url, descryption, name }) => {
+const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints}) => {
   const [hover, setHover] = useState(false);
 
   const truncateString = (input: string , num : number): string => {
@@ -110,9 +111,11 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name }) => {
                     // borderRight: '1px solid #cccccc',
                 }} 
             >
-                <Typography variant="h6">
-                    {truncateString(name , 28)}
-                </Typography>
+                <Tooltip title={`${num_paints} paintings`} arrow>
+                    <Typography variant="h6">
+                        {num_paints}
+                    </Typography>
+                </Tooltip>
             </Box>
             <Box
                 sx ={{

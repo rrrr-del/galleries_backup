@@ -7,9 +7,10 @@ interface Props {
   descryption: string;
   name: string;
   num_paints : number ,
+  num_artists : number ,
 }
 
-const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints}) => {
+const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints , num_artists}) => {
   const [hover, setHover] = useState(false);
 
   const truncateString = (input: string , num : number): string => {
@@ -21,15 +22,15 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints}) 
 
   return (
 <Card
-      sx={{ width: 400, height: 550, backgroundColor: '#e0e0e0', borderRadius: '23px', }}
+      sx={{ width: 500, height: 500, backgroundColor: '#ea80fc', borderRadius: '23px', margin : '0 auto'}}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
 >   
-    <Box sx={{ width: 400, height: 550 , display: 'flex', flexDirection: 'column', }}>
+    <Box sx={{ width: 500, height: 500 , display: 'flex', flexDirection: 'column', }}>
         {hover ? (
             <Box sx={{ 
                 position: 'relative', // Set position to relative for the parent
-                width: 400, // Ensure the width is 400
+                width: 500, // Ensure the width is 400
                 height: 350, // Ensure the height is 350
             }}>
 
@@ -39,12 +40,13 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints}) 
                     alt="Gallery Image"
                     sx={{
                         overflow: 'hidden',
-                        width: 400 ,
+                        width: 500 ,
                         height: 350,
                         objectFit: 'fill',
                         zIndex: 1,
                         position: 'absolute',
-                        opacity: 0.4,
+                        opacity: 0.2,
+                        filter: 'blur(9px)' 
                     }}
                 />
                 
@@ -81,7 +83,7 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints}) 
             alt="Gallery Image"
             sx={{
               overflow: 'hidden',
-              width: 400 ,
+              width: 500 ,
               height: 350,
               objectFit: 'fill',
             }}
@@ -91,18 +93,22 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints}) 
 
         <Box
             sx={{
-                width: 400,
-                height: 100,
+                width: 500,
+                height: 75,
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                variant:"h3",
+                borderBottom: '1px solid #424242',
                 // flexDirection: 'row',
                 // borderTop: '1px solid #424242',
-                padding: '0 0', // Optional padding for spacing
+                 // Optional padding for spacing
             }}
         >
-            {truncateString(name , 28)}
-
+            <Typography variant="h6" sx = {{justifyContent: 'center',
+                alignItems: 'center',}}>
+                {truncateString(name , 42)}
+            </Typography>
         </Box>
 
 
@@ -110,8 +116,8 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints}) 
 
         <Box
             sx={{
-                width: 400,
-                height: 100,
+                width: 500,
+                height: 75,
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -122,8 +128,8 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints}) 
         >
             <Box
                 sx ={{
-                    width: 300,
-                    height: 100,
+                    width: 500 / 3,
+                    height: 75,
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -132,15 +138,37 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints}) 
                 }} 
             >
                 <Tooltip title={`${num_paints} paintings`} arrow>
-                    <Typography variant="h6">
+                    <Typography variant="h5">
                         {num_paints}
                     </Typography>
                 </Tooltip>
             </Box>
+
             <Box
                 sx ={{
-                    width: 100,
-                    height: 100,
+                    width: 500 / 3,
+                    height: 75,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    color : "brown",  
+                    // borderRight: '1px solid #cccccc',
+                }} 
+            >
+                <Tooltip title={`${num_artists} artists uploaded their pictures in this gallery`} arrow>
+                    <Typography variant="h5">
+                        {num_artists}
+                    </Typography>
+                </Tooltip>
+            </Box>
+
+
+
+
+            <Box
+                sx ={{
+                    width: 500 / 3,
+                    height: 75,
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',  

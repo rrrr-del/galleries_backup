@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card, CardMedia, Typography, Box , Tooltip} from '@mui/material';
 import { FaRocketchat } from 'react-icons/fa6';
+import { FaRegImage } from "react-icons/fa6";
 
 interface Props {
   image_url: string;
@@ -142,6 +143,7 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints , 
                         {num_paints}
                     </Typography>
                 </Tooltip>
+                <FaRegImage style={{ fontSize: '24px' , marginLeft : '16px'}}/>
             </Box>
 
             <Box

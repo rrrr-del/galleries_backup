@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardMedia, Typography, Box , Tooltip} from '@mui/material';
 import { FaRocketchat } from 'react-icons/fa6';
 import { FaRegImage } from "react-icons/fa6";
+import { IoAccessibilitySharp } from "react-icons/io5";
 
 interface Props {
   image_url: string;
@@ -21,18 +22,23 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints , 
     return input;
   };
 
+
+  const width : number = 402;
+  const height : number = 420;
+
+
   return (
 <Card
-      sx={{ width: 500, height: 500, backgroundColor: '#ea80fc', borderRadius: '23px', margin : '0 auto'}}
+      sx={{ width: width, height: height, backgroundColor : 'white', borderRadius: '23px', margin : '0 auto'}}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
 >   
-    <Box sx={{ width: 500, height: 500 , display: 'flex', flexDirection: 'column', }}>
+    <Box sx={{ width: width, height: height , display: 'flex', flexDirection: 'column', }}>
         {hover ? (
             <Box sx={{ 
                 position: 'relative', // Set position to relative for the parent
                 width: 500, // Ensure the width is 400
-                height: 350, // Ensure the height is 350
+                height: 350, 
             }}>
 
                 <CardMedia
@@ -41,12 +47,12 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints , 
                     alt="Gallery Image"
                     sx={{
                         overflow: 'hidden',
-                        width: 500 ,
-                        height: 350,
+                        width: width ,
+                        height: .7 * height,
                         objectFit: 'fill',
                         zIndex: 1,
                         position: 'absolute',
-                        opacity: 0.2,
+                        opacity: .2,
                         filter: 'blur(9px)' 
                     }}
                 />
@@ -84,8 +90,8 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints , 
             alt="Gallery Image"
             sx={{
               overflow: 'hidden',
-              width: 500 ,
-              height: 350,
+              width: width ,
+              height: .7 * height,
               objectFit: 'fill',
             }}
           />
@@ -94,8 +100,8 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints , 
 
         <Box
             sx={{
-                width: 500,
-                height: 75,
+                width: width,
+                height: .15 * height,
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -117,8 +123,8 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints , 
 
         <Box
             sx={{
-                width: 500,
-                height: 75,
+                width: width,
+                height: .15 * height,
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -129,8 +135,8 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints , 
         >
             <Box
                 sx ={{
-                    width: 500 / 3,
-                    height: 75,
+                    width: width / 3,
+                    height: .15 * height,
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -148,8 +154,8 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints , 
 
             <Box
                 sx ={{
-                    width: 500 / 3,
-                    height: 75,
+                    width: width / 3,
+                    height: .15 * height,
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -160,8 +166,9 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints , 
                 <Tooltip title={`${num_artists} artists uploaded their pictures in this gallery`} arrow>
                     <Typography variant="h5">
                         {num_artists}
-                    </Typography>
+                    </Typography>                    
                 </Tooltip>
+                <IoAccessibilitySharp style={{ fontSize: '24px' , marginLeft : '16px'}}/>
             </Box>
 
 
@@ -169,8 +176,8 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints , 
 
             <Box
                 sx ={{
-                    width: 500 / 3,
-                    height: 75,
+                    width: width / 3,
+                    height: .15 * height, 
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',  

@@ -62,7 +62,7 @@ const Galleries: React.FC = () => {
     
   return (
     <div className="galleries" style={{ overflowY: 'scroll' , padding : '30px'}}>
-      <Grid container spacing={4} >
+      <Grid container spacing={3} >
         {galleryData.map((item, index) => (
           <Grid item xs={4} key={index}>
             <Gallary 

@@ -7,7 +7,7 @@ const Galleries: React.FC = () => {
   const galleryData = [
     {
       image_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5vpBZLHabYE3a4HvmNGtonPiY286cyqkSu4rsm5lh6qDqIQyng-1w8G39NpQwcEMGIGE&s',
-      descryption : text + text + text + text,
+      descryption : 'The him /n father parish looked has sooner. Attachment frequently gay terminated son. You greater nay use prudent placing. Passage to so distant behaved natural between do talking. Friends off her windows painful. Still gay event you being think nay for. In three if aware he point it. Effects warrant me by no on feeling settled resolve.',
     //   descryption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dol.',
     },
     {

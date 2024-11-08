@@ -37,7 +37,7 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints , 
         {hover ? (
             <Box sx={{ 
                 position: 'relative', // Set position to relative for the parent
-                width: width, // Ensure the width is 400
+                width: width, 
                 height: .7 * height, 
             }}>
 
@@ -79,7 +79,7 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints , 
                     opacity : 30 ,
                     zIndex: 2, // Ensure text is above the background
                 }}>
-                    {truncateString(descryption, 270)}
+                    {truncateString(descryption, 240)}
                 </Typography>
             </Box>
         ) : (
@@ -114,7 +114,7 @@ const Gallary: React.FC<Props> = ({ image_url, descryption, name , num_paints , 
         >
             <Typography variant="h6" sx = {{justifyContent: 'center',
                 alignItems: 'center',}}>
-                {truncateString(name , 42)}
+                {truncateString(name , 36)}
             </Typography>
         </Box>
 
